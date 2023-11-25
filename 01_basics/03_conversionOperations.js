@@ -1,0 +1,110 @@
+let score = "33"
+
+console.log(typeof score);
+console.log(typeof (score));
+
+let valueInNumber = Number(score)
+
+console.log(typeof valueInNumber);
+
+let scoreA = "33abc"
+
+console.log(typeof scoreA);
+console.log(typeof (scoreA));
+
+let valueInNumberA = Number(scoreA)
+
+console.log(typeof valueInNumberA);
+console.log(valueInNumberA);
+
+let scoreB = null
+
+console.log(typeof scoreB);
+console.log(typeof (scoreB));
+
+let valueInNumberB = Number(scoreB)
+
+console.log(typeof valueInNumberB);
+console.log(valueInNumberB);
+
+let scoreC = undefined
+
+console.log(typeof scoreC);
+console.log(typeof (scoreC));
+
+let valueInNumberC = Number(scoreC)
+
+console.log(typeof valueInNumberC);
+console.log(valueInNumberC);
+
+let scoreD = false
+
+console.log(typeof scoreD);
+console.log(typeof (scoreD));
+
+let valueInNumberD = Number(scoreD)
+
+console.log(typeof valueInNumberD);
+console.log(valueInNumberD);
+
+let scoreE = "Zaki"
+
+console.log(typeof scoreE);
+console.log(typeof (scoreE));
+
+let valueInNumberE = Number(scoreE)
+
+console.log(typeof valueInNumberE);
+console.log(valueInNumberE);
+
+// "33" => 33
+// "33abc" => NaN
+// true => 1 false => 0
+
+let isLoggedIn = 1
+let booleanIsLoggedIn = Boolean(isLoggedIn)
+console.log(booleanIsLoggedIn);
+
+let toConvert = ""
+
+let converted = Boolean(toConvert)
+console.log(converted);
+
+let toConvertA = "Zaki"
+
+let convertedA = Boolean(toConvertA)
+console.log(convertedA);
+
+// 1 => true
+// 0 => false
+// "" => false
+// "Zaki" => true
+
+let someNumber = 33
+let stringSomeNumber = String(someNumber)
+console.log(typeof stringSomeNumber);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
