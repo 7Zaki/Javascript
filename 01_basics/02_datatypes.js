@@ -1,5 +1,5 @@
 "use strict" // treat all JS code as newer version
-// alert(3+3) // we are using nodejs, not browser
+// alert(3+3) // we are using nodejs, not browser, alert works in console and in nodejs it runs but has a different synatx
 // code readabilityshould be high
 
 let name = "Zaki"
