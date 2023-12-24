@@ -3,7 +3,7 @@ let score = "33"
 console.log(typeof score);
 console.log(typeof (score));
 
-let valueInNumber = Number(score)
+let valueInNumber = Number(score)  //This Number guarantees that score has been converted into number
 
 console.log(typeof valueInNumber);
 
