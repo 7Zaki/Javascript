@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+<body style="background-color: black; color: white;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    //below feature does not give functionalities especially propagation functionality
+    //so this is not the appropriate approach as it gives less feature
+    // document.getElementById("owl").onclick = function() {
+    //     alert("owl clicked")
+    // }
+
+    // attachEvent() it was used in the time of Internet explorer
+    // jQuery - on event use to be there
+
+    //Events that we should know
+    //type, timestamp, prevent default
+    //target, toElement, srcElement, currentTarget
+    //clientX, clientY, screenX, screenY
+    //altkey, ctrlkey, shiftkey, keyCode
+
+    //This is best approach. it tell us about browser events and environment events
+    // document.getElementById("owl").addEventListener("click", function(e) {
+    //     console.log(e);
+    // }, true)
+
+
+    // document.getElementById("images").addEventListener("click", function(e) {
+    //     console.log("clicked inside the ul");
+    // }, false)
+
+    // document.getElementById("owl").addEventListener("click", function(e) {
+    //     console.log("owl clicked");
+    //     e.stopPropagation();
+    // }, false)
+
+    //In bubbling events are tracked from inside to outside > When false, bubbling works
+    //In capturing events are tracked from outside to inside > When true, capturing works
+    //To stop bubbling of events from inside to outside use stopPropagation, it works like prevent Default
+//Event propagation has two context , event bubbling and event capturing 
+    
+    // document.getElementById("google").addEventListener("click", function(e) {
+    //     e.preventDefault() //it will prevent opening google link
+    //     e.stopPropagation() //it will prevent bubbling of events
+    //     console.log("Google clicked");
+    // }, false)
+
+    //A small project - On clicking any image, the image should get disappeared
+
+    // document.querySelector("#images").addEventListener("click", function(e) {
+    //     console.log(e.target.parentNode);
+    //     let removeIt = e.target.parentNode
+    //     removeIt.remove()   //first method to remove
+    //     //removeIt.parentNode.removeChild(removeIt) //second method to remove
+    // })
+
+    document.querySelector("#images").addEventListener("click", function(e) {
+        console.log(e.target.tagName);
+        if (e.target.tagName === "IMG") {
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+    })
+</script>
+</html>
+
+//removeit is li element, its parent node is ul element, its child is then li element and the child which
+//we want to remove is removeIt. because in removeChild method it directly removes child so we need to go
+//to the parent of it to get the same element removed by removeChild method
+
+//JS is sequentially run language but there are exceptions in JS events
+//Do not inject onClick event in HTML element because it is not scalable approach
