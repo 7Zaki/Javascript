@@ -189,3 +189,40 @@ function newGame() {
 
 
 ```
+
+
+## project 5
+
+```javascript
+//generate a random color
+
+const randomColor = function() {
+  const hexCode = '0123456789ABCDEF';
+  let hexColor = '#';
+  for (let i = 0; i < 6; i++) {
+    hexColor += hexCode[Math.floor(Math.random() * 16)];
+  }
+  return hexColor;
+};
+
+let intervalId;
+const startChangingColor = function() {
+  if (!intervalId) {    //if intervalId is not null
+    intervalId =  setInterval(changeBgColor, 1000)
+  }
+  
+
+  function changeBgColor() {document.body.style.backgroundColor = randomColor()}
+
+};
+
+const stopChangingColor = function() {
+  clearInterval(intervalId)
+  intervalId = null; //to dereference since its of no use now so that your memory gets free
+};
+
+document.querySelector("#start").addEventListener("click", startChangingColor);
+
+document.querySelector("#stop").addEventListener("click", stopChangingColor);
+
+```
